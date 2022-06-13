@@ -33,6 +33,7 @@ public class GeneratedTests extends TestBase {
             String actualTitle = title();
 
             assertThat(actualTitle).isEqualTo(expectedTitle);
+            sleep(3000);
         });
     }
 

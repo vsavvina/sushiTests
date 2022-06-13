@@ -5,8 +5,7 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.title;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -27,6 +26,7 @@ public class GeneratedTests extends TestBase {
     void titleTest() {
         step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
             open("https://sushiwok.ru/voronezh/menu/rolly/"));
+            sleep(3000);
 
         step("Page title should have text 'Just a moment...'", () -> {
             String expectedTitle = "Just a moment...";

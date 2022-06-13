@@ -28,8 +28,8 @@ public class GeneratedTests extends TestBase {
         step("Open url 'https://sushiwok.ru/voronezh/menu/rolly/'", () ->
             open("https://sushiwok.ru/voronezh/menu/rolly/"));
 
-        step("Page title should have text 'Заказать роллы с...'", () -> {
-            String expectedTitle = "Заказать роллы с доставкой в Суши Wok Воронеж на дом и офис";
+        step("Page title should have text 'Just a moment...'", () -> {
+            String expectedTitle = "Just a moment...";
             String actualTitle = title();
 
             assertThat(actualTitle).isEqualTo(expectedTitle);

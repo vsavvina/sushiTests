@@ -2,6 +2,7 @@ package cloud.autotests.tests;
 
 import cloud.autotests.config.Project;
 import cloud.autotests.helpers.AllureAttachments;
+import cloud.autotests.helpers.Attach;
 import cloud.autotests.helpers.DriverSettings;
 import cloud.autotests.helpers.DriverUtils;
 import com.codeborne.selenide.Configuration;
@@ -14,6 +15,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 
 
 @ExtendWith({AllureJunit5.class})
@@ -34,7 +36,7 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
-        String sessionId = DriverUtils.getSessionId();
+        /*String sessionId = DriverUtils.getSessionId();
 
         AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
@@ -45,6 +47,10 @@ public class TestBase {
 
         if (Project.isVideoOn()) {
             AllureAttachments.addVideo(sessionId);
-        }
+        }*/
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
     }
 }
